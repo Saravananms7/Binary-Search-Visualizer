@@ -208,7 +208,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you have any questions or suggestions, please feel free to reach out:
 
 - **GitHub Issues**: [Create an issue](https://github.com/yourusername/binary-search-visualizer/issues)
-- **Email**: your.email@example.com
+- **Email**: saravanansworkspace@gmail.com
 
 ---
 
