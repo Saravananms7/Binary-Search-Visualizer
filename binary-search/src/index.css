@@ -1,0 +1,509 @@
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 50%, #f3e8ff 100%);
+  min-height: 100vh;
+}
+
+/* App container */
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 50%, #f3e8ff 100%);
+  padding: 2rem 1rem;
+}
+
+/* Main container */
+.main-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Header styles */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+/* Controls section */
+.controls {
+  background: linear-gradient(90deg, #eff6ff 0%, #e0e7ff 100%);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.controls-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  color: #374151;
+  font-weight: 500;
+}
+
+.input-group input {
+  padding: 0.5rem 1rem;
+  border: 2px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.input-group input:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+}
+
+/* Button styles */
+.btn {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.btn-primary:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.btn-success {
+  background-color: #059669;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #047857;
+}
+
+.btn-secondary {
+  background-color: #4b5563;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #374151;
+}
+
+/* Array visualization */
+.array-section {
+  margin-bottom: 2rem;
+}
+
+.array-section h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.array-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.array-cell {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: 2px solid;
+  font-weight: 600;
+  transition: all 0.3s;
+  transform: scale(1);
+}
+
+.array-cell:hover {
+  transform: scale(1.05);
+}
+
+.array-cell.found {
+  background-color: #10b981;
+  color: white;
+  border-color: #059669;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.array-cell.mid {
+  background-color: #fbbf24;
+  color: #1f2937;
+  border-color: #f59e0b;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.array-cell.low {
+  background-color: #60a5fa;
+  color: white;
+  border-color: #3b82f6;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.array-cell.high {
+  background-color: #f87171;
+  color: white;
+  border-color: #ef4444;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.array-cell.range {
+  background-color: #e5e7eb;
+  color: #374151;
+  border-color: #d1d5db;
+}
+
+.array-cell.default {
+  background-color: white;
+  color: #374151;
+  border-color: #d1d5db;
+}
+
+.index-labels {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.index-label {
+  width: 3rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Step controls */
+.step-controls {
+  background-color: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.step-controls h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.step-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.step-info {
+  padding: 1rem;
+  background-color: white;
+  border: 2px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.comparison-text {
+  text-align: center;
+  padding: 1rem;
+  background-color: #dbeafe;
+  border-radius: 0.5rem;
+  color: #1e40af;
+  font-weight: 500;
+}
+
+/* Status and information grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.status-card {
+  background: linear-gradient(90deg, #eff6ff 0%, #e0e7ff 100%);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  color: #374151;
+}
+
+.legend-card {
+  background: linear-gradient(90deg, #ecfdf5 0%, #d1fae5 100%);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.status-label {
+  font-weight: 500;
+}
+
+.status-value {
+  font-weight: 600;
+}
+
+.status-value.success {
+  color: #059669;
+}
+
+.status-value.error {
+  color: #dc2626;
+}
+
+.status-value.info {
+  color: #2563eb;
+}
+
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  color: white;
+}
+
+.status-badge.blue {
+  background-color: #60a5fa;
+}
+
+.status-badge.red {
+  background-color: #f87171;
+}
+
+.status-badge.yellow {
+  background-color: #fbbf24;
+  color: #1f2937;
+}
+
+/* Legend items */
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.legend-color {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+  border: 2px solid;
+}
+
+.legend-color.yellow {
+  background-color: #fbbf24;
+  border-color: #f59e0b;
+}
+
+.legend-color.blue {
+  background-color: #60a5fa;
+  border-color: #3b82f6;
+}
+
+.legend-color.red {
+  background-color: #f87171;
+  border-color: #ef4444;
+}
+
+.legend-color.green {
+  background-color: #10b981;
+  border-color: #059669;
+}
+
+.legend-color.gray {
+  background-color: #e5e7eb;
+  border-color: #d1d5db;
+}
+
+.legend-text {
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+/* Algorithm info */
+.algorithm-info {
+  margin-top: 2rem;
+  background: linear-gradient(90deg, #faf5ff 0%, #f3e8ff 100%);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.algorithm-info h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.algorithm-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .algorithm-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.algorithm-section h4 {
+  font-weight: bold;
+  color: #7c3aed;
+  margin-bottom: 0.5rem;
+}
+
+.algorithm-section ol,
+.algorithm-section ul {
+  color: #374151;
+}
+
+.algorithm-section li {
+  margin-bottom: 0.25rem;
+}
+
+.algorithm-section ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+.algorithm-section ul {
+  list-style-type: none;
+}
+
+.algorithm-section ul li::before {
+  content: "•";
+  margin-right: 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1rem;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .controls-content {
+    flex-direction: column;
+  }
+  
+  .step-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
